@@ -4,46 +4,31 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 		<title><?=$page_title?></title>
-		<link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://use.typekit.net/viz3trp.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+		<link href="<?=base_url()?>assets/css/styles.css" rel="stylesheet">
 
 		<script src="<?=base_url()?>assets/js/jquery-3.4.1.min.js" type="application/javascript"></script>
-		<script src="<?=base_url()?>assets/js/bootstrap.min.js" type="application/javascript"></script>
-		<script src="<?=base_url()?>assets/js/bootstrap.min.js.map" type="application/javascript"></script>
 
 		<script>
 			var this_page = "<?=$this_page?>";
 			var page_title = "<?=$page_title?>";
-
-			function navbar_update(this_page){
-				$("#"+this_page+"_item").addClass('active');
-				$("#"+this_page+"_link").append(' <span class="sr-only">(current)</span>');
-			}
 		</script>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#0C9964;">
-			<a class="navbar-brand" href="<?=site_url()?>">LIT FANTASY FOOTBALL</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li id="home_item" class="nav-item">
-						<a id="home_link" class="nav-link" href="<?=site_url()?>">Home</a>
-					</li>
-					<li id="litlist_item" class="nav-item">
-						<a id="litlist_link" class="nav-link" href="<?=site_url()?>/litjams/litlist">The List</a>
-					</li>
-					<li id="contact_item" class="nav-item">
-						<a id="contact_link" class="nav-link" href="<?=site_url()?>/litjams/litform">Contact</a>
-					</li>
-				</ul>
-				<ul id="right_navbar" class="navbar-nav ml-auto mr-5">
-					<li id="messages_item" class="nav-item">
-						<a id="messages_link" class="nav-link" href="<?=site_url()?>/litjams/messages">Messages</a>
-					</li>
-					<li id="login_item" class="nav-item">
-						<a id="login_link" class="nav-link" href="#">Log In</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
+	<div class="nav-top">
+
+	<?php
+		if ($this->session->role == 1) {
+			echo '<div class="nav-icon nav-left" ><i class="fas fa-pen-square" ></i ><span style = "margin-left: 5px" > Edit</span ></div >';
+		}
+		else {
+			echo '<div class="nav-icon nav-left" ></div >';
+
+		}
+	?>
+		<h1>WAX Tourney</h1>
+		<a href="<?=site_url()?>/auth" class="nav-icon nav-right" id="login"><span>Log In</span><i class="fas fa-user-circle"></i></a>
+	</div>
+	<div class="site-content">

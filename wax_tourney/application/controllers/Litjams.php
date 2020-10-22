@@ -4,17 +4,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Litjams extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
-		$this->load->model('litlist_model');
-		$this->load->model('litform_model');
+		$this->load->model('waxtourney_model');
+//		$this->load->model('litform_model');
 	}
 
 	public function index(){
-		$data["page_title"] = "LIT FANTASY SITE";
+		$data["page_title"] = "WAX TOURNEY";
 		$data["this_page"] = "home";
-		$data["row"] = $this->litlist_model->get_random_row();
+		$data["teams"] = $this->waxtourney_model->get_scoring_list();
 		$this->load->view('templates/head', $data);
 		$this->load->view('index', $data);
+		$this->load->view('templates/footer', $data);
 	}
+
+	public function champ_tourney() {
+		$data["page_title"] = "WAX | CHAMPIONSHIP BRACKET";
+		$data["this_page"] = "champ_tourney";
+		$data["teams"] = $this->waxtourney_model->get_scoring_list();
+		$this->load->view('templates/head', $data);
+		$this->load->view('litlist', $data);
+		$this->load->view('templates/footer', $data);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//OLD BUSINESS FROM THE LIT JAMS
 
 	public function litlist(){
 		$data["page_title"] = "LIT FANTASY SITE";
