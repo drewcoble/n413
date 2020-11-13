@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/n413/wax_tourney';
+$config['base_url'] = 'http://localhost:8888/n413/wax_tourney';
 
 /*
 |--------------------------------------------------------------------------

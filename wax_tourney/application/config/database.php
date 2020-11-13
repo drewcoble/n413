@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost:3306',
+	'hostname' => 'localhost:8889',
 	'username' => 'root',
-	'password' => '',
+	'password' => 'root',
 	'database' => 'ancoble_db',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
