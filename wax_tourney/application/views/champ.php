@@ -5,6 +5,7 @@
 	<?php
 
 	$this_week = $this->input->get('week', TRUE);
+	$this_week_string = "wk" . $this_week . "_points";
 
 //	echo $teams[0]["team_name"];
 
@@ -23,7 +24,7 @@
 								. $teams[$matchup["team1"]]["team_image"] . '" alt="">'
 								. $teams[$matchup["team1"]]["team_name"] .
 							'</div>
-							<div class="team-score">' . $teams[$matchup["team1"]]["wk15_points"] . '</div>
+							<div class="team-score">' . $teams[$matchup["team1"]][$this_week_string] . '</div>
 						</div>
 					</div> <!-- END OF ROYAL RUMBLE WINNERS BRACKET DIV -->
 					<div class="royal-rumble-l">
@@ -34,7 +35,7 @@
 								. $teams[$matchup["team2"]]["team_image"] . '" alt="">'
 								. $teams[$matchup["team2"]]["team_name"] .
 							'</div>
-							<div class="team-score">' . $teams[$matchup["team2"]]["wk15_points"] . '</div>
+							<div class="team-score">' . $teams[$matchup["team2"]][$this_week_string] . '</div>
 						</div>
 						<hr>
 					';
@@ -47,7 +48,7 @@
 								. $teams[$matchup["team1"]]["team_image"] . '" alt="">'
 								. $teams[$matchup["team1"]]["team_name"] .
 							'</div>
-							<div class="team-score">' . $teams[$matchup["team1"]]["wk15_points"] . '</div>
+							<div class="team-score">' . $teams[$matchup["team1"]][$this_week_string] . '</div>
 						</div>
 						<hr><div class="matchup-team-rumble-l">
 							<div class="team-seed">' . $matchup["team2"] . '</div>
@@ -56,7 +57,7 @@
 								. $teams[$matchup["team2"]]["team_image"] . '" alt="">'
 								. $teams[$matchup["team2"]]["team_name"] .
 							'</div>
-							<div class="team-score">' . $teams[$matchup["team2"]]["wk15_points"] . '</div>
+							<div class="team-score">' . $teams[$matchup["team2"]][$this_week_string] . '</div>
 						</div>
 					</div>'; // END OF ROYAL RUMBLE LOSERS BRACKET DIV
 			} else if ($matchup["bracket"] == 4) {
@@ -76,27 +77,10 @@
 						<img class="team-logo" src="' . base_url() . 'assets/images/fantasy_team_logos/'
 						. $teams[$matchup["team1"]]["team_image"] . '" alt="">'
 						. $teams[$matchup["team1"]]["team_name"] . '
-					</div>';
-				switch ($this_week) {
-					case 12:
-						echo '<div class="team-score">' . $teams[$matchup["team1"]]["wk12_points"] . '</div>';
-						break;
-					case 13:
-						echo '<div class="team-score">' . $teams[$matchup["team1"]]["wk13_points"] . '</div>';
-						break;
-					case 14:
-						echo '<div class="team-score">' . $teams[$matchup["team1"]]["wk14_points"] . '</div>';
-						break;
-					case 15:
-						echo '<div class="team-score">' . $teams[$matchup["team1"]]["wk15_points"] . '</div>';
-						break;
-					case 16:
-						echo '<div class="team-score">' . $teams[$matchup["team1"]]["wk16_points"] . '</div>';
-						break;
-					default:
-						echo '<div class="team-score">???</div>';
-				}
-				echo '
+					</div>
+					
+				<div class="team-score">' . $teams[$matchup["team1"]][$this_week_string] . '</div>
+
 				</div>
 				<hr>
 				<div class="matchup-team">
@@ -107,28 +91,11 @@
 						<img class="team-logo" src="' . base_url() . 'assets/images/fantasy_team_logos/'
 						. $teams[$matchup["team2"]]["team_image"] . '" alt="">'
 						. $teams[$matchup["team2"]]["team_name"] . '
-					</div>';
-				switch ($this_week) {
-					case 12:
-						echo '<div class="team-score">' . $teams[$matchup["team2"]]["wk12_points"] . '</div>';
-						break;
-					case 13:
-						echo '<div class="team-score">' . $teams[$matchup["team2"]]["wk13_points"] . '</div>';
-						break;
-					case 14:
-						echo '<div class="team-score">' . $teams[$matchup["team2"]]["wk14_points"] . '</div>';
-						break;
-					case 15:
-						echo '<div class="team-score">' . $teams[$matchup["team2"]]["wk15_points"] . '</div>';
-						break;
-					case 16:
-						echo '<div class="team-score">' . $teams[$matchup["team2"]]["wk16_points"] . '</div>';
-						break;
-					default:
-						echo '<div class="team-score">???</div>';
-				}
-
-				echo '</div>
+					</div>
+					
+					<div class="team-score">' . $teams[$matchup["team2"]][$this_week_string] . '</div>
+				
+				</div>
 			</div>';
 			}
 
@@ -165,11 +132,11 @@
 </div>
 
 </body>
-<!--<script>-->
-<!--	$(document).ready(function(){-->
-<!--		document.title = page_title;-->
-<!--		navbar_update(this_page);-->
-<!--	}); //ready-->
-<!--</script>-->
+<script>
+	$(document).ready(function(){
+		document.title = page_title;
+		navbar_update(this_page);
+	}); //ready
+</script>
 </html>
 

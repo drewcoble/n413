@@ -4,6 +4,7 @@
 	<?php
 
 	$this_week = $this->input->get('week', TRUE);
+	$this_week_string = "wk" . $this_week . "_points";
 
 	//	echo $teams[0]["team_name"];
 
@@ -11,13 +12,11 @@
 
 		switch ($matchup["matchup_id"]) {
 			case 3:
+			case 5:
 				echo '<h4>For Deliverance</h4>';
 				break;
 			case 4:
 				echo '<h4>Knee Deep in Feces</h4>';
-				break;
-			case 5:
-				echo '<h4>For Deliverance</h4>';
 				break;
 			case 6:
 				echo '<h4>Feces Cup Finals</h4><h5>Round 1</h5>';
@@ -25,7 +24,8 @@
 			case 7:
 				echo '<h4>Feces Cup Finals</h4><h5>Round 2&nbsp;&nbsp;(If Necessary)</h5>';
 				break;
-			default:break;
+			default:
+				break;
 		}
 
 		echo '<div class="tourney-matchup feces-matchup">';
@@ -38,27 +38,9 @@
 				<img class="team-logo" src="' . base_url() . 'assets/images/fantasy_team_logos/'
 				. $teams[$matchup["team1"]]["team_image"] . '" alt="">'
 				. $teams[$matchup["team1"]]["team_name"] . '
-			</div>';
-		switch ($this_week) {
-			case 12:
-				echo '<div class="team-score">' . $teams[$matchup["team1"]]["wk12_points"] . '</div>';
-				break;
-			case 13:
-				echo '<div class="team-score">' . $teams[$matchup["team1"]]["wk13_points"] . '</div>';
-				break;
-			case 14:
-				echo '<div class="team-score">' . $teams[$matchup["team1"]]["wk14_points"] . '</div>';
-				break;
-			case 15:
-				echo '<div class="team-score">' . $teams[$matchup["team1"]]["wk15_points"] . '</div>';
-				break;
-			case 16:
-				echo '<div class="team-score">' . $teams[$matchup["team1"]]["wk16_points"] . '</div>';
-				break;
-			default:
-				echo '<div class="team-score">???</div>';
-		}
-		echo '
+			</div>
+			
+			<div class="team-score">' . $teams[$matchup["team1"]][$this_week_string] . '</div>
 				</div>
 				<hr>
 				<div class="matchup-team">
@@ -69,37 +51,16 @@
 				<img class="team-logo" src="' . base_url() . 'assets/images/fantasy_team_logos/'
 				. $teams[$matchup["team2"]]["team_image"] . '" alt="">'
 				. $teams[$matchup["team2"]]["team_name"] . '
-			</div>';
-		switch ($this_week) {
-			case 12:
-				echo '<div class="team-score">' . $teams[$matchup["team2"]]["wk12_points"] . '</div>';
-				break;
-			case 13:
-				echo '<div class="team-score">' . $teams[$matchup["team2"]]["wk13_points"] . '</div>';
-				break;
-			case 14:
-				echo '<div class="team-score">' . $teams[$matchup["team2"]]["wk14_points"] . '</div>';
-				break;
-			case 15:
-				echo '<div class="team-score">' . $teams[$matchup["team2"]]["wk15_points"] . '</div>';
-				break;
-			case 16:
-				echo '<div class="team-score">' . $teams[$matchup["team2"]]["wk16_points"] . '</div>';
-				break;
-			default:
-				echo '<div class="team-score">???</div>';
-		}
-
-		echo '</div>
+			</div>
+			<div class="team-score">' . $teams[$matchup["team2"]][$this_week_string] . '</div>
+			</div>
 	</div>';
-	}
+	} // end of foreach loop
 	?>
 
+</div> <!-- end of tourney-div -->
 
 
-
-
-</div>
 
 <div class="tourney-week">
 	<?php
@@ -124,12 +85,12 @@
 </div>
 
 </body>
-<!--<script>-->
-<!--	$(document).ready(function(){-->
-<!--		document.title = page_title;-->
-<!--		navbar_update(this_page);-->
-<!--	}); //ready-->
-<!--</script>-->
+<script>
+	$(document).ready(function(){
+		document.title = page_title;
+		navbar_update(this_page);
+	}); //ready
+</script>
 </html>
 
 

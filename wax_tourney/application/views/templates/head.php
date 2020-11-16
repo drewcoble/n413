@@ -29,6 +29,17 @@
 		}
 	?>
 		<h1>WAX Tourney</h1>
-		<a href="<?=site_url()?>/auth" class="nav-icon nav-right" id="login"><span>Log In</span><i class="fas fa-user-circle"></i></a>
-	</div>
+<!--		<a href="--><?//=site_url()?><!--/auth" class="nav-icon nav-right" id="login"><span>Log In</span><i class="fas fa-user-circle"></i></a>-->
+        <?php
+        if($this->session->user_id > 0){
+            echo '
+            <a href="' . site_url() . '/auth/logout" class="nav-icon nav-right" id="login"><span>Log Out</span><i class="fas fa-user-circle"></i></a>
+            ';
+        }else{
+            echo '
+            <a href="' . site_url() . '/auth" class="nav-icon nav-right" id="login"><span>Log In</span><i class="fas fa-user-circle"></i></a>
+            ';
+        }
+        ?>
+    </div>
 	<div class="site-content">

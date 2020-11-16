@@ -17,4 +17,34 @@ class Auth extends CI_Controller
 		$this->load->view('templates/footer', $data);
 	}
 
+	public function authenticate(){
+		$credentials = $this->input->post();
+		$messages = $this->auth_model->authenticate($credentials);
+		echo json_encode($messages);
+	}
+
+	public function logout(){
+		$data["page_title"] = "WAX | LOGOUT";
+		$data["this_page"] = "logout";
+		$this->session->user_id = 0; //remove the log-in
+		$this->session->sess_destroy(); //delete the session variables (for the next page load)
+		$this->load->view('templates/head', $data);
+		$this->load->view('auth/logout', $data);
+		$this->load->view('templates/footer', $data);
+	}
+
+	public function register(){
+		$data["page_title"] = "WAX | REGISTER";
+		$data["this_page"] = "register";
+		$this->load->view('templates/head', $data);
+		$this->load->view('auth/register', $data);
+		$this->load->view('templates/footer', $data);
+	}
+
+	public function new_account(){
+		$credentials = $this->input->post();
+		$messages = $this->auth_model->new_account($credentials);
+		echo json_encode($messages);
+	}
+
 }
