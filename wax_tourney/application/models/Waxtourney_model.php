@@ -39,6 +39,12 @@ class Waxtourney_model extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function get_team_by_id($id) {
+		$sql = "SELECT * FROM `wax_teams` WHERE `id` = " . $id;
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+
 	public function get_random_row() {
 		$sql = "SELECT * FROM `the_list` ORDER BY RAND() LIMIT 1";
 		$query = $this->db->query($sql);

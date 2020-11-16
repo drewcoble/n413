@@ -10,10 +10,10 @@
 				echo '
 				<div class="scoring-row" id="last-row">
 					<span class="rank">' . $rank . '</span>
-					<span class="team-name">
+					<a href="' . site_url() . '/waxtourney/teamdetails?id=' . $team["id"] . '" class="team-name">
 						<img class="team-logo" src="' . base_url() . 'assets/images/fantasy_team_logos/' . $team["team_image"] . '" alt="">'
 						. $team["team_name"] .
-					'</span>
+					'</a>
 					<span class="team-points">' . $team["total_points"] . '</span>
 				</div>';
 			}
@@ -22,10 +22,10 @@
 				<div class="scoring-row">
 					<span class="rank">' . $rank . '</span>
 					
-					<span class="team-name">
+					<a href="' . site_url() . '/waxtourney/teamdetails?id=' . $team["id"] . '" class="team-name">
 						<img class="team-logo" src="' . base_url() . 'assets/images/fantasy_team_logos/' . $team["team_image"] . '" alt="">'
 					 	. $team["team_name"] .
-					'</span>
+					'</a>
 					<span class="team-points">' . $team["total_points"] . '</span>
 				</div>';
 			}

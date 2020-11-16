@@ -4,6 +4,8 @@
 			<h2>Amp Jam Lit Register</h2>
 		</div> <!-- /col-12 -->
 	</div> <!-- /row -->
+
+
 	<form id="register_form" method="POST" action="">
 		<div class="row mt-5">
 			<div class="col-4"></div>  <!-- spacer -->

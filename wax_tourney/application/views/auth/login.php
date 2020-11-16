@@ -16,6 +16,9 @@
 			<button type="submit" id="submit" class="site-btn">Submit</button>
 
 		</form>
+		<br>
+		<p>Don't have an account yet?</p>
+		<p><a href="<?=site_url()?>/auth/register">Sign Up here.</a></p>
 	</div>
 
 	</body>
