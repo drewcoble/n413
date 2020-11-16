@@ -1,0 +1,11 @@
+{
+  "name": "wax_tourney",
+  "version": "1.0.0",
+  "description": "What is CodeIgniter ###################",
+  "main": "index.js",
+  "scripts": {
+    "run-sass": "sass --watch assets/scss/styles.scss assets/css/styles.css"
+  },
+  "author": "",
+  "license": "ISC"
+}
