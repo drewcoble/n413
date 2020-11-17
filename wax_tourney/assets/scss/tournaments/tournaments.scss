@@ -2,12 +2,12 @@
 
 .tourney-div {
   /*background-color: rgba(250,100,100,0.3);*/
-  height: 100%;
+  height: calc(100% - 80px);
   width: 100%;
   display: flex;
   padding: 10px 0 0;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 
@@ -44,7 +44,8 @@ hr {
   font-size: 10px;
   width: 20px;
   height: 20px;
-  background-color: rgba(239,239,246,0.8);
+  background-color: rgba(239,239,246,0.85);
+  border: 1px solid rgba($lightest-gray,1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,6 +60,7 @@ hr {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  line-height: 18px;
 }
 
 .team-name .team-logo {

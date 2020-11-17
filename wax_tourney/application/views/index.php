@@ -9,7 +9,7 @@
 			if ($rank == 12) {
 				echo '
 				<div class="scoring-row" id="last-row">
-					<span class="rank">' . $rank . '</span>
+					<span class="team-seed">' . $team["team_seed"] . '</span>
 					<a href="' . site_url() . '/waxtourney/teamdetails?id=' . $team["id"] . '" class="team-name">
 						<img class="team-logo" src="' . base_url() . 'assets/images/fantasy_team_logos/' . $team["team_image"] . '" alt="">'
 						. $team["team_name"] .
@@ -20,7 +20,7 @@
 			else if ($rank < 12) {
 				echo '
 				<div class="scoring-row">
-					<span class="rank">' . $rank . '</span>
+					<span class="team-seed">' . $team["team_seed"] . '</span>
 					
 					<a href="' . site_url() . '/waxtourney/teamdetails?id=' . $team["id"] . '" class="team-name">
 						<img class="team-logo" src="' . base_url() . 'assets/images/fantasy_team_logos/' . $team["team_image"] . '" alt="">'

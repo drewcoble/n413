@@ -59,7 +59,13 @@ class Waxtourney extends CI_Controller {
 		$data["page_title"] = "WAX TOURNEY";
 		$data["this_page"] = "teamdetails";
 		$team_id = $this->input->get('id', TRUE);
-		$data["teams"] = $this->waxtourney_model->get_team_by_id($team_id);
+		$data["team"] = $this->waxtourney_model->get_team_by_id($team_id);
+		$data["qb"] = $this->waxtourney_model->get_player_by_id($data["team"]["qb"]);
+		$data["rb1"] = $this->waxtourney_model->get_player_by_id($data["team"]["rb1"]);
+		$data["rb2"] = $this->waxtourney_model->get_player_by_id($data["team"]["rb2"]);
+		$data["wr1"] = $this->waxtourney_model->get_player_by_id($data["team"]["wr1"]);
+		$data["wr2"] = $this->waxtourney_model->get_player_by_id($data["team"]["wr2"]);
+		$data["te"] = $this->waxtourney_model->get_player_by_id($data["team"]["te"]);
 		$this->load->view('templates/head', $data);
 		$this->load->view('teamdetails', $data);
 		$this->load->view('templates/footer', $data);

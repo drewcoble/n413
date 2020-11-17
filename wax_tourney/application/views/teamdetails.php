@@ -3,29 +3,34 @@
 <div class="team-details">
 	<div class="team-header">
 
-		<img src="<?=base_url()?>assets/images/fantasy_team_logos/<?=$teams[0]["team_image"]?>" alt="">
+		<img src="<?=base_url()?>assets/images/fantasy_team_logos/<?=$team["team_image"]?>" alt="">
 
 		<div class="team-info">
-			<h3><?= $teams[0]["team_name"] ?></h3>
+			<h3><?= $team["team_name"] ?></h3>
 			<div class="team-subinfo">
-				Seed: <?= $teams[0]["team_seed"] ?>
-				&nbsp;|&nbsp;Points: <?= $teams[0]["total_points"] ?>
+				Seed: <?= $team["team_seed"] ?>
+				&nbsp;|&nbsp;Points: <?= $team["total_points"] ?>
 			</div>
 		</div>
 
 	</div> <!-- END of team-header div -->
 
+	<?php
+	$team_positions = array("qb","rb1","rb2","wr1","wr2","te");
+	?>
+
 	<div class="team-roster">
+		<?//= $team["players"];?>
 		<div class="player-row">
 			<div class="position qb-pos">
 				QB
 			</div>
 			<div class="player-details">
-				<img src="<?=base_url()?>/assets/images/players/lamar-jackson.png" class="player-img" >
+				<img src="<?=base_url()?>/assets/images/players/<?= $qb["image"]; ?>" class="player-img" >
 
 				<div class="player-info">
-					<p>BAL | QB</p>
-					<h4>Lamar Jackson</h4>
+					<p><?= $qb["team"]; ?> | QB</p>
+					<h4><?= $qb["name"]; ?></h4>
 				</div>
 			</div>
 		</div>
@@ -35,11 +40,11 @@
 				RB
 			</div>
 			<div class="player-details">
-				<img src="<?=base_url()?>/assets/images/players/dalvin-cook.png" class="player-img" >
+				<img src="<?=base_url()?>/assets/images/players/<?= $rb1["image"]; ?>" class="player-img" >
 
 				<div class="player-info">
-					<p>MIN | RB</p>
-					<h4>Dalvin Cook</h4>
+					<p><?= $rb1["team"]; ?> | RB</p>
+					<h4><?= $rb1["name"]; ?></h4>
 				</div>
 			</div>
 		</div>
@@ -49,11 +54,11 @@
 				RB
 			</div>
 			<div class="player-details">
-				<img src="<?=base_url()?>/assets/images/players/austin-ekeler.png" class="player-img" >
+				<img src="<?=base_url()?>/assets/images/players/<?= $rb2["image"]; ?>" class="player-img" >
 
 				<div class="player-info">
-					<p>LAC | RB</p>
-					<h4>Austin Ekeler</h4>
+					<p><?= $rb2["team"]; ?> | RB</p>
+					<h4><?= $rb2["name"]; ?></h4>
 				</div>
 			</div>
 		</div>
@@ -63,11 +68,11 @@
 				WR
 			</div>
 			<div class="player-details">
-				<img src="<?=base_url()?>/assets/images/players/keenan-allen.png" class="player-img" >
+				<img src="<?=base_url()?>/assets/images/players/<?= $wr1["image"]; ?>" class="player-img" >
 
 				<div class="player-info">
-					<p>LAC | WR</p>
-					<h4>Keenan Allen</h4>
+					<p><?= $wr1["team"]; ?> | WR</p>
+					<h4><?= $wr1["name"]; ?></h4>
 				</div>
 			</div>
 		</div>
@@ -77,11 +82,11 @@
 				WR
 			</div>
 			<div class="player-details">
-				<img src="<?=base_url()?>/assets/images/players/aj-brown.png" class="player-img" >
+				<img src="<?=base_url()?>/assets/images/players/<?= $wr2["image"]; ?>" class="player-img" >
 
 				<div class="player-info">
-					<p>TEN | WR</p>
-					<h4>AJ Brown</h4>
+					<p><?= $wr2["team"]; ?> | WR</p>
+					<h4><?= $wr2["name"]; ?></h4>
 				</div>
 			</div>
 		</div>
@@ -91,11 +96,11 @@
 				TE
 			</div>
 			<div class="player-details">
-				<img src="<?=base_url()?>/assets/images/players/travis-kelce.png" class="player-img" >
+				<img src="<?=base_url()?>/assets/images/players/<?= $te["image"]; ?>" class="player-img" >
 
 				<div class="player-info">
-					<p>KC | TE</p>
-					<h4>Travis Kelce</h4>
+					<p><?= $te["team"]; ?> | TE</p>
+					<h4><?= $te["name"]; ?></h4>
 				</div>
 			</div>
 		</div>
