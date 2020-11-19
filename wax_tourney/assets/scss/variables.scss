@@ -1,10 +1,19 @@
-// site colors
+// site grayscale colors
 $black: rgb(0,0,25);
+$gray: #8e91be;
 $lightest-gray: rgb(206,212,227);
 $white: rgb(248,249,251);
 
+// site colors
+$gold: #deab54;
 $orange: rgb(255,140,20);
+$dark-blue: rgb(14,33,139);
 $blue: rgb(78,114,255);
+$green: rgb(67,170,97);
+$old-green: rgb(97,200,117);
+$red: rgb(201,74,94);
+$brown: rgb(89,48,1);
 
-
+// box-shadow for the site
 $shadow: 0px 2px 10px 0px  rgba($black,0.15);
+$b-shadow: 0px -2px 10px 0px  rgba($black,0.15);

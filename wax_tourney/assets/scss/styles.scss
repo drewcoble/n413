@@ -1,15 +1,21 @@
 @import 'variables.scss';
 
 @import 'structure.scss';
-@import 'topnav.scss';
-@import 'bottomnav.scss';
+@import 'alert.scss';
+
+@import 'nav/topnav.scss';
+@import 'nav/bottomnav.scss';
+@import 'nav/weekselect.scss';
 
 @import 'heatcheck.scss';
 
 @import 'tournaments/tournaments.scss';
 
 @import 'teamdetails.scss';
+@import 'edit.scss';
 
+@import 'auth/login.scss';
+@import 'auth/logout.scss';
 
 @import 'oldstyles.scss';
 

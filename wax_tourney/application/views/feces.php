@@ -1,6 +1,10 @@
 <h3 class="page-title feces-title">Feces Cup</h3>
+<h4 class="page-subtitle">Double-Deliverance Tournament</h4>
 
 <div class="tourney-div feces-cup">
+
+	<div class="bracket-container">
+
 	<?php
 
 	$this_week = $this->input->get('week', TRUE);
@@ -11,6 +15,8 @@
 	foreach($matchups as $matchup) {
 
 		switch ($matchup["matchup_id"]) {
+			case 1:
+				break;
 			case 3:
 			case 5:
 				echo '<h4>For Deliverance</h4>';
@@ -57,6 +63,8 @@
 	</div>';
 	} // end of foreach loop
 	?>
+
+	</div> <!-- end of bracket-holder -->
 
 	<div class="tourney-week">
 		<?php

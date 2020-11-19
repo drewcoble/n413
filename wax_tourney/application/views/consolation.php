@@ -1,8 +1,11 @@
 <h3 class="page-title consolation">Consolation Bracket</h3>
+<h4 class="page-subtitle">Single-Elimination Tournament</h4>
 
 <div class="tourney-div consolation-bracket">
 
-	<?php
+	<div class="bracket-container">
+
+		<?php
 
 	$this_week = $this->input->get('week', TRUE);
 	$this_week_string = "wk" . $this_week . "_points";
@@ -62,6 +65,8 @@
 
 	}
 ?>
+
+	</div>
 
 	<div class="tourney-week">
 		<?php

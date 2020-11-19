@@ -10,5 +10,24 @@ html, body {
   font-family: poppins, sans-serif;
   color: $black;
   background-color: $white;
+  display: flex;
+  justify-content: center;
   /*background: linear-gradient(150deg,rgb(20,110,140), rgb(20,140,110));*/
+}
+
+.site-content {
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  padding: 60px 20px 100px;
+  /*margin: 60px 0;*/
+  background-color: $white;
+  z-index: 75;
+  display: flex;
+  flex-direction: column;
+  //justify-content: space-between;
+
 }

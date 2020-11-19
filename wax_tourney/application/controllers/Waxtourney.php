@@ -55,9 +55,9 @@ class Waxtourney extends CI_Controller {
 		$this->load->view('templates/footer', $data);
 	}
 
-	public function teamdetails() {
+	public function team_details() {
 		$data["page_title"] = "WAX TOURNEY";
-		$data["this_page"] = "teamdetails";
+		$data["this_page"] = "team_details";
 		$team_id = $this->input->get('id', TRUE);
 		$data["team"] = $this->waxtourney_model->get_team_by_id($team_id);
 		$data["qb"] = $this->waxtourney_model->get_player_by_id($data["team"]["qb"]);
@@ -71,6 +71,25 @@ class Waxtourney extends CI_Controller {
 		$this->load->view('templates/footer', $data);
 	}
 
+	public function edit() {
+//		$this_week = $this->input->get('week', TRUE);
+		$data["page_title"] = "WAX | EDIT";
+		$data["this_page"] = "edit";
+//		$data["this_week"] = $this_week;
+		$data["teams"] = $this->waxtourney_model->get_teams();
+//		$data["matchups"] = $this->waxtourney_model->get_winners_bracket($this_week);
+		$this->load->view('templates/head', $data);
+		$this->load->view('edit', $data);
+		$this->load->view('templates/footer', $data);
+	}
+
+	public function edit_seeding() {
+		$teams = $this->input->post();
+		foreach($teams as $team) {
+			$this->waxtourney_model->edit_seed($team['id'], $team['seed']);
+		}
+//		echo json_encode($messages);
+	}
 
 }
 

@@ -10,7 +10,7 @@ class Waxtourney_model extends CI_Model {
 	}
 
 	public function get_scoring_list(){
-		$sql = "SELECT * FROM `wax_teams` ORDER BY `total_points` DESC";
+		$sql = "SELECT *, wk12_points+wk13_points+wk14_points+wk15_points+wk16_points+wk17_points AS `calc_points`  FROM `wax_teams` ORDER BY `calc_points` DESC";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
@@ -51,14 +51,25 @@ class Waxtourney_model extends CI_Model {
 		return $query->row_array();
 	}
 
+	public function edit_seed($id, $seed) {
 
+		$id = $this->db->escape_str($id);
+		$seed = $this->db->escape_str($seed);
 
+		$sql = 'UPDATE `wax_teams` SET team_seed='. $seed . ' WHERE id=' . $id;
+		$this->db->query($sql);
 
+//		$messages = array();
+//		$messages["status"] = $this->db->insert('the_form', $contact);
+//		if($messages["status"]){
+//			$messages["success"] = '<p>Thank you for submitting your comment. <br/>
+//								<span class="mt-5 float-right"><i>The Web Site Team</i></span></p>';
+//		}else{
+//			$messages["failed"]  = '<p>Sorry, but something went wrong.  Please try again later. <br/>
+//								<span class="mt-5 float-right"><i>The Web Site Team</i></span></p>';
+//		}
+//		return $messages;
 
-	public function get_random_row() {
-		$sql = "SELECT * FROM `the_list` ORDER BY RAND() LIMIT 1";
-		$query = $this->db->query($sql);
-		return $query->row_array();
 	}
 
 

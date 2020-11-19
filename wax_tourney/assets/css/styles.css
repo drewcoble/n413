@@ -10,7 +10,59 @@ html, body {
   font-family: poppins, sans-serif;
   color: #000019;
   background-color: #f8f9fb;
+  display: flex;
+  justify-content: center;
   /*background: linear-gradient(150deg,rgb(20,110,140), rgb(20,140,110));*/
+}
+
+.site-content {
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  padding: 60px 20px 100px;
+  /*margin: 60px 0;*/
+  background-color: #f8f9fb;
+  z-index: 75;
+  display: flex;
+  flex-direction: column;
+}
+
+.alert-modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 25, 0.2);
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.alert-modal-bg .alert-modal {
+  width: 300px;
+  height: 270px;
+  background-color: rgba(248, 249, 251, 0.95);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 25, 0.15);
+}
+.alert-modal-bg .alert-modal a {
+  text-decoration: none;
+  color: #f8f9fb;
+}
+.alert-modal-bg .alert-modal .site-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 25, 0.15);
 }
 
 /* Styles for top nav (Main site title & user login icon) */
@@ -25,14 +77,13 @@ html, body {
   top: 0;
   background-color: rgba(248, 249, 251, 0.9);
   /*border-bottom: 1px solid rgb(220,220,230);*/
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 25, 0.15);
+  padding: 0 20px;
 }
-
 .nav-top a {
   text-decoration: none;
   color: inherit;
 }
-
 .nav-top h1 {
   /*padding-left: 15px;*/
   color: #0e218b;
@@ -45,7 +96,6 @@ html, body {
   font-size: 25px;
   font-family: industry-inc-base, sans-serif;
 }
-
 .nav-top .nav-icon {
   color: #8e91be;
   display: flex;
@@ -55,31 +105,40 @@ html, body {
   height: 100%;
   /*width: calc(50% - 85px);*/
   /*min-width: 50px;*/
-  width: 75px;
   padding-top: 2px;
   /*padding-right: 10px;*/
 }
-
 .nav-top .nav-icon i {
   font-size: 23.5px;
   margin-left: 5px;
 }
-
 .nav-top .nav-icon span {
   font-size: 10px;
   margin-top: 0px;
 }
-
-.nav-left {
-  padding-left: 10px;
+.nav-top .nav-left {
+  padding-left: 0;
+  height: 100%;
+  width: 75px;
 }
-
-.nav-right {
-  padding-right: 10px;
+.nav-top .nav-right {
+  display: flex;
+  padding-right: 0;
+  align-items: center;
   justify-content: flex-end;
   text-align: right;
+  height: 100%;
+  width: 75px;
 }
 
+@media (max-width: 375px) {
+  .nav-top {
+    padding: 0 10px;
+  }
+  .nav-top h1 {
+    font-size: 22px;
+  }
+}
 /* Styles for bottom nav menu */
 .nav-bottom {
   width: 100%;
@@ -94,12 +153,15 @@ html, body {
   background-color: rgba(248, 249, 251, 0.9);
   /*border-top: 1px solid rgb(220,220,230);*/
   color: #8e91be;
-  box-shadow: 0px -2px 10px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px -2px 10px 0px rgba(0, 0, 25, 0.15);
 }
-
 .nav-bottom a {
   text-decoration: none;
   color: inherit;
+}
+.nav-bottom a.current {
+  background-color: #4e72ff;
+  color: rgba(248, 249, 251, 0.75);
 }
 
 .nav-bottom .nav-icon {
@@ -116,33 +178,88 @@ html, body {
   font-size: 23.5px;
 }
 
-.current {
-  background-color: #5d73ef;
-  color: rgba(248, 249, 251, 0.75);
-}
-
 .nav-bottom .nav-icon span {
   font-size: 10px;
   /*color: rgb(0,0,25);*/
   margin-top: 2px;
 }
 
+.tourney-week {
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  color: #000019;
+  letter-spacing: 3px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: industry-inc-base, sans-serif;
+}
+.tourney-week .right-arrow a {
+  padding-left: 5px;
+}
+.tourney-week .left-arrow a {
+  padding-right: 1px;
+}
+.tourney-week h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 35px;
+  padding-top: 5px;
+  background-color: rgba(206, 212, 227, 0.95);
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 25, 0.15);
+}
+
+.left-arrow, .right-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  text-align: center;
+}
+.left-arrow a, .right-arrow a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  height: 35px;
+  width: 40px;
+  background-color: rgba(206, 212, 227, 0.95);
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 25, 0.15);
+}
+.left-arrow i, .right-arrow i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  height: 30px;
+  width: 40px;
+}
+
 /* Styles for scoring table on home page */
 .scoring-table {
   width: 100%;
-  min-height: 95%;
+  height: calc(45px * 13);
   /*max-height: 520px;*/
   background: linear-gradient(to bottom, rgba(255, 140, 20, 0.6), rgba(248, 249, 251, 0.6), rgba(78, 114, 255, 0.6));
   border-radius: 6px;
   /*border: 1px solid rgb(206,212,227);*/
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 25, 0.15);
-  margin-bottom: 60px;
+  margin-bottom: -30px;
 }
 
 .scoring-table .scoring-row {
   width: 100%;
-  height: calc(100% / 13);
-  min-height: 40px;
+  height: 45px;
   /*background-color: gray;*/
   border-bottom: 1px solid #ced4e3;
   display: flex;
@@ -153,7 +270,7 @@ html, body {
   font-size: 10px;
   width: 20px;
   height: 20px;
-  background-color: rgba(239, 239, 246, 0.8);
+  background-color: rgba(248, 249, 251, 0.8);
   border: 1px solid #ced4e3;
   display: flex;
   justify-content: center;
@@ -174,12 +291,12 @@ html, body {
 .scoring-table .scoring-row .team-name {
   width: calc(100% - 110px);
   height: 100%;
-  min-height: 40px;
+  min-height: 45px;
   border-right: 1px solid #ced4e3;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: 85%;
+  font-size: 90%;
 }
 
 .scoring-table .scoring-row a {
@@ -189,8 +306,7 @@ html, body {
 
 .scoring-table .scoring-row .team-points {
   width: 80px;
-  height: 100%;
-  min-height: 40px;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -208,9 +324,7 @@ html, body {
   background-color: rgba(248, 249, 251, 0.75);
   border-radius: 6px 6px 0 0;
 }
-
 .title-row .team-name {
-  font-size: 16px;
   padding-left: 5px;
 }
 
@@ -218,43 +332,51 @@ html, body {
   border-bottom: none;
 }
 
+@media (max-width: 320px) {
+  .scoring-table .scoring-row .team-name {
+    font-size: 75%;
+    width: calc(100% - 95px);
+  }
+  .scoring-table .scoring-row a.team-name .team-logo {
+    height: 30px;
+  }
+  .scoring-table .scoring-row .team-points {
+    font-size: 85%;
+    width: 65px;
+  }
+}
 /* Styles for general tournament brackets */
 .tourney-div {
   /*background-color: rgba(250,100,100,0.3);*/
-  height: calc(100% - 80px);
   width: 100%;
   display: flex;
   padding: 10px 0 0;
   flex-direction: column;
   justify-content: space-between;
 }
-
-.tourney-div .tourney-matchup {
+.tourney-div .bracket-container {
+  display: flex;
+  flex-direction: column;
+}
+.tourney-div .bracket-container .tourney-matchup {
   /*background-color: rgba(248,249,251,0.9);*/
   width: 100%;
-  height: 20%;
-  max-height: 100px;
   border-radius: 10px;
   margin-bottom: 20px;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
 }
-
-hr {
-  height: 1px;
+.tourney-div .bracket-container .tourney-matchup hr {
+  height: 0px;
   border: none;
   background-color: #ced4e3;
 }
-
-.matchup-team {
-  height: 50%;
+.tourney-div .bracket-container .tourney-matchup .matchup-team {
+  height: 45px;
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
-
-.royal-rumble-w .matchup-team {
-  height: 100%;
+  background: linear-gradient(5deg, rgba(206, 212, 227, 0), rgba(206, 212, 227, 0.2));
 }
 
 .team-seed {
@@ -390,130 +512,34 @@ hr {
   background-color: rgba(201, 167, 33, 0.8);
 }
 
-/* Styles for general site content */
-.site-content {
+.seed-edit-form {
   width: 100%;
-  height: 100%;
-  position: fixed;
-  overflow-y: scroll;
-  top: 0;
-  padding: 60px 20px 0;
-  /*margin: 60px 0;*/
-  background-color: #f8f9fb;
-  z-index: 75;
+  font-size: 85%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-
-.page-title {
+.seed-edit-form .form-row {
+  width: 100%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.seed-edit-form .form-row .team-name {
+  width: 80%;
+  padding-left: 10px;
+}
+.seed-edit-form .form-row .seed-input {
+  font-size: 16px;
+  width: 20%;
   height: 30px;
-  width: 100%;
-  text-align: left;
-  /*color: rgb(248,249,251);*/
-  letter-spacing: 2px;
-  /*background-color: seagreen;*/
-  font-family: industry-inc-base, sans-serif;
+  padding-left: 10px;
+  border: 1px solid #ced4e3;
+  border-radius: 6px;
 }
-
-.page-title .fa-fire {
-  color: darkorange;
-}
-
-.champs {
-  color: #deab54;
-}
-
-.consolation {
-  color: #8d92bf;
-}
-
-.tourney-week {
-  width: 100%;
-  height: 40px;
-  /*position: fixed;*/
-  /*bottom: 60px;*/
-  /*color: rgb(248,249,251);*/
-  letter-spacing: 2px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: industry-inc-base, sans-serif;
-}
-
-.left-arrow, .right-arrow {
-  width: 15px;
-  text-align: center;
-}
-
-.left-arrow a, .right-arrow a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.tourney-week i {
-  font-size: 25px;
-}
-
-.royal-rumble-w {
-  width: 100%;
-  height: 10%;
-  max-height: 50px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
-  background-color: #deab54;
-  display: flex;
-  align-items: center;
-}
-
-.royal-rumble-l {
-  width: 100%;
-  height: 30%;
-  max-height: 150px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
-  background-color: rgba(201, 74, 94, 0.9);
-}
-
-.matchup-team-rumble-l {
-  height: 33.3%;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.championship-game {
-  background-color: #deab54;
-}
-
-.winners {
-  background-color: rgba(69, 111, 240, 0.9);
-}
-
-.losers {
-  background-color: rgba(201, 74, 94, 0.9);
-}
-
-.cons-matchup {
-  background-color: rgba(97, 200, 117, 0.9);
-}
-
-.final-game {
-  background-color: rgba(170, 170, 180, 0.8);
-}
-
-.feces-title {
-  color: rgba(89, 48, 1, 0.8);
-}
-
-.feces-matchup {
-  background-color: rgba(89, 48, 1, 0.8);
-}
-
-h4 {
-  color: #000014;
+.seed-edit-form .site-btn {
+  margin-top: 10px;
 }
 
 /* styles for the login page */
@@ -527,12 +553,10 @@ h4 {
   display: flex;
   flex-direction: column;
 }
-
 .login-row span {
   letter-spacing: 2px;
   font-size: 16px;
 }
-
 .login-row input {
   width: 100%;
   max-width: 350px;
@@ -540,14 +564,82 @@ h4 {
   margin-bottom: 20px;
   border-radius: 6px;
   padding-left: 10px;
-  border: solid 0.5px rgba(170, 170, 180, 0.8);
+  border: solid 0.5px rgba(206, 212, 227, 0.8);
   letter-spacing: 1px;
   font-size: 16px;
 }
 
+.logout-screen-container {
+  height: calc(100% - 60px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styles for general site content */
+.page-title {
+  color: #0e218b;
+  width: 100%;
+  text-align: left;
+  /*color: rgb(248,249,251);*/
+  letter-spacing: 2px;
+  /*background-color: seagreen;*/
+  font-family: industry-inc-base, sans-serif;
+}
+
+.page-subtitle {
+  color: #8e91be;
+}
+
+.page-title .fa-fire {
+  color: #ff8c14;
+}
+
+.champs {
+  color: #deab54;
+}
+
+.consolation {
+  color: #0e218b;
+}
+
+.championship-game {
+  background-color: #deab54;
+}
+
+.winners {
+  background-color: rgba(78, 114, 255, 0.9);
+}
+
+.losers {
+  background-color: rgba(201, 74, 94, 0.9);
+}
+
+.cons-matchup {
+  background-color: rgba(67, 170, 97, 0.9);
+}
+
+.final-game {
+  background-color: rgba(142, 145, 190, 0.8);
+}
+
+.feces-title {
+  color: rgba(89, 48, 1, 0.8);
+}
+
+.feces-matchup {
+  background-color: rgba(89, 48, 1, 0.8);
+}
+
+h4 {
+  color: #000019;
+}
+
 .site-btn {
-  color: white;
-  background-color: #2c21c9;
+  color: #f8f9fb;
+  background-color: #4e72ff;
   width: 150px;
   height: 40px;
   border: none;

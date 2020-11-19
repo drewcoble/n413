@@ -30,7 +30,9 @@ class Auth extends CI_Controller
 		$this->session->sess_destroy(); //delete the session variables (for the next page load)
 		$this->load->view('templates/head', $data);
 		$this->load->view('auth/logout', $data);
+//		$this->load->view('index', $data);
 		$this->load->view('templates/footer', $data);
+
 	}
 
 	public function register(){

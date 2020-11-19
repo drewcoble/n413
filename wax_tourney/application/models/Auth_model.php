@@ -36,7 +36,7 @@ class Auth_model extends CI_Model
 		if($this->session->user_id > 0){
 			$messages["status"] = "1";
 			$messages["role"] = $this->session->role;
-			$messages["success"] = '<h3 style="text-align: center">You are now Logged In.</h3>';
+			$messages["success"] = '<h3>You are now Logged In.</h3><a href="' . site_url() . '/waxtourney/index"><button class="site-btn">OK</button></a>';
 		}else{
 			$messages["failed"] = '<h3 class="text-center" style="margin-bottom: 20px; text-align: center">The Log-in was not successful.</h3>
             <div style="text-align: center"><a href="' . site_url() . '/auth"><button type="button" class="site-btn">Try Again</button></a></div>';
@@ -118,7 +118,7 @@ class Auth_model extends CI_Model
 		//
 		if($this->session->user_id > 0){
 			$messages["status"] = "1";
-			$messages["success"] = '<h3 class="text-center">You are now Registered and Logged In.</h3>';
+			$messages["success"] = '<h3>You are now Registered and Logged In.</h3><a href="' . site_url() . '/waxtourney/index"><button class="site-btn">OK</button></a>';
 		}else{
 			$messages["failed"] = '<h3 class="text-center">The Registration was not successful.</h3><div class="col-12 text-center"><a href="'.site_url().'/auth/register" class="text-center"><button class="btn btn-primary mt-5">Try Again</button></a></div>';
 		}

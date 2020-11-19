@@ -1,0 +1,39 @@
+.alert-modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($black,0.2);
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  .alert-modal {
+	width: 300px;
+	height: 270px;
+	background-color: rgba($white,0.95);
+	border-radius: 10px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	box-shadow: $shadow;
+
+	a {
+	  text-decoration: none;
+	  color: $white;
+	}
+
+	.site-btn {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  box-shadow: $shadow;
+
+
+	}
+  }
+}

@@ -1,0 +1,30 @@
+/* styles for the login page */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.login-row {
+  display: flex;
+  flex-direction: column;
+
+  span {
+	letter-spacing: 2px;
+	font-size: 16px;
+  }
+
+  input {
+	width: 100%;
+	max-width: 350px;
+	height: 40px;
+	margin-bottom: 20px;
+	border-radius: 6px;
+	padding-left: 10px;
+	border: solid 0.5px rgba($lightest-gray,0.8);
+	letter-spacing: 1px;
+	font-size: 16px;
+  }
+}
+

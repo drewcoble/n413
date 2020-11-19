@@ -73,11 +73,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost:8889',
-	'username' => 'root',
-	'password' => 'root',
+	'hostname' => 'localhost:8889', // for MAMP
+//	'hostname' => 'localhost:3306', // for XAMPP, Web4
+	'username' => 'root', // for MAMP, XAMPP
+//	'username' => 'ancoble', // for Web4
+	'password' => 'root', // for MAMP
+//	'password' => '', // for XAMPP
+//	'password' => 'beneficent propagating chitlings', // for Web4
 	'database' => 'ancoble_db',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

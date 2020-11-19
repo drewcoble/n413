@@ -1,14 +1,16 @@
 <h3 class="page-title champs">Championship Bracket</h3>
+<h4 class="page-subtitle">Double-Elimination Tournament</h4>
 
 <div class="tourney-div champ-bracket">
 <!--	<h4>Winner's Bracket</h4>-->
-	<?php
+	<div class="bracket-container">
+
+		<?php
 
 	$this_week = $this->input->get('week', TRUE);
 	$this_week_string = "wk" . $this_week . "_points";
 
 //	echo $teams[0]["team_name"];
-
 
 	foreach ($matchups as $matchup) {
 
@@ -16,7 +18,7 @@
 				echo '<div class="tourney-matchup winners">';
 			} else if ($matchup["bracket"] == 2) {
 				echo '<h4>ROYAL RUMBLE</h4>
-					<div class="royal-rumble-w">
+					<div class="tourney-matchup championship-game">
 						<div class="matchup-team">
 							<div class="team-seed">' . $matchup["team1"] . '</div>
 							<div class="team-name">
@@ -27,8 +29,8 @@
 							<div class="team-score">' . $teams[$matchup["team1"]][$this_week_string] . '</div>
 						</div>
 					</div> <!-- END OF ROYAL RUMBLE WINNERS BRACKET DIV -->
-					<div class="royal-rumble-l">
-						<div class="matchup-team-rumble-l">
+					<div class="tourney-matchup losers">
+						<div class="matchup-team">
 							<div class="team-seed">' . $matchup["team2"] . '</div>
 							<div class="team-name">
 								<img class="team-logo" src="' . base_url() . 'assets/images/fantasy_team_logos/'
@@ -41,7 +43,7 @@
 					';
 			} else if ($matchup["bracket"] == 3) {
 				echo '
-						<div class="matchup-team-rumble-l">
+						<div class="matchup-team">
 							<div class="team-seed">' . $matchup["team1"] . '</div>
 							<div class="team-name">
 								<img class="team-logo" src="' . base_url() . 'assets/images/fantasy_team_logos/'
@@ -50,7 +52,7 @@
 							'</div>
 							<div class="team-score">' . $teams[$matchup["team1"]][$this_week_string] . '</div>
 						</div>
-						<hr><div class="matchup-team-rumble-l">
+						<hr><div class="matchup-team">
 							<div class="team-seed">' . $matchup["team2"] . '</div>
 							<div class="team-name">
 								<img class="team-logo" src="' . base_url() . 'assets/images/fantasy_team_logos/'
@@ -103,7 +105,7 @@
 
 	?>
 
-
+	</div>
 
 	<div class="tourney-week">
 		<?php

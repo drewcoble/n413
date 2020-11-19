@@ -23,6 +23,8 @@
 
 	</body>
 	<script>
+		//let site_url = <?//=site_url()?>//;
+
 		$(document).ready(function(){
 			document.title = page_title;
 			navbar_update("");
@@ -37,11 +39,20 @@
 						//handle messages here
 						if(data.status){
 							console.log(data);
-							$("#form-content").html(data.success);
-							right_navbar_update(data.role);
+							$('#alert-message').html(data.success);
+							$("#alert-modal").css("display","flex");
+							// $("#alert-modal").click(()=>{
+							// 	$("#alert-modal").css("display","none");
+							// })
+
+							//$("#nav-right").html(`<a href="<?//=site_url()?>///auth/logout" class="nav-icon" id="login"><span>Log Out</span><i class="fas fa-user-circle"></i></a>`);
 						}else{
 							console.log(data.status);
-							$("#form-content").html(data.failed);
+							$('#alert-message').html(data.failed);
+							$("#alert-modal").css("display","flex");
+							// $("#alert-modal").click(()=>{
+							// 	$("#alert-modal").css("display","none");
+							// })
 						}
 					},
 					"json"
