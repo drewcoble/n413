@@ -5,7 +5,7 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   font-family: poppins, sans-serif;
   color: $black;
@@ -18,11 +18,12 @@ html, body {
 .site-content {
   width: 100%;
   max-width: 800px;
-  height: 100%;
-  position: fixed;
-  overflow-y: scroll;
-  top: 0;
-  padding: 60px 20px 100px;
+  //height: 100%;
+  min-height: 100%;
+  //position: fixed;
+  //overflow-y: scroll;
+  //top: 0;
+  padding: 60px 20px 0px;
   /*margin: 60px 0;*/
   background-color: $white;
   z-index: 75;

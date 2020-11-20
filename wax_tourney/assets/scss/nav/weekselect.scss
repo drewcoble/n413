@@ -1,12 +1,12 @@
 // Styles for tournament week selector
 
 .tourney-week {
-  width: 100%;
-  //max-width: 760px;
+  width: calc(100% - 40px);
+  max-width: 760px;
   height: 40px;
   position: fixed;
   bottom: 60px;
-  left: 0;
+  //left: 0;
   color: $black;
   //background-color: rgba($white,0.9);
   letter-spacing: 3px;

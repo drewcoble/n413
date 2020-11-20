@@ -5,7 +5,7 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   font-family: poppins, sans-serif;
   color: #000019;
@@ -18,11 +18,8 @@ html, body {
 .site-content {
   width: 100%;
   max-width: 800px;
-  height: 100%;
-  position: fixed;
-  overflow-y: scroll;
-  top: 0;
-  padding: 60px 20px 100px;
+  min-height: 100%;
+  padding: 60px 20px 0px;
   /*margin: 60px 0;*/
   background-color: #f8f9fb;
   z-index: 75;
@@ -139,6 +136,17 @@ html, body {
     font-size: 22px;
   }
 }
+@media (min-width: 720px) {
+  .nav-top .nav-left, .nav-top .nav-right {
+    width: 100px;
+  }
+  .nav-top .nav-icon i {
+    font-size: 30px;
+  }
+  .nav-top .nav-icon span {
+    font-size: 16px;
+  }
+}
 /* Styles for bottom nav menu */
 .nav-bottom {
   width: 100%;
@@ -185,11 +193,11 @@ html, body {
 }
 
 .tourney-week {
-  width: 100%;
+  width: calc(100% - 40px);
+  max-width: 760px;
   height: 40px;
   position: fixed;
   bottom: 60px;
-  left: 0;
   color: #000019;
   letter-spacing: 3px;
   display: flex;
@@ -248,13 +256,12 @@ html, body {
 /* Styles for scoring table on home page */
 .scoring-table {
   width: 100%;
-  height: calc(45px * 13);
   /*max-height: 520px;*/
   background: linear-gradient(to bottom, rgba(255, 140, 20, 0.6), rgba(248, 249, 251, 0.6), rgba(78, 114, 255, 0.6));
   border-radius: 6px;
   /*border: 1px solid rgb(206,212,227);*/
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 25, 0.15);
-  margin-bottom: -30px;
+  margin-bottom: 80px;
 }
 
 .scoring-table .scoring-row {
@@ -350,7 +357,8 @@ html, body {
   /*background-color: rgba(250,100,100,0.3);*/
   width: 100%;
   display: flex;
-  padding: 10px 0 0;
+  padding: 10px 0 0px;
+  margin-bottom: 100px;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -427,8 +435,7 @@ html, body {
   border-radius: 6px;
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 25, 0.15);
   width: 100%;
-  min-height: 710px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 .team-details .team-header {
   background-color: rgba(50, 50, 100, 0.25);
@@ -512,25 +519,28 @@ html, body {
   background-color: rgba(201, 167, 33, 0.8);
 }
 
-.seed-edit-form {
+.edit-content {
+  margin-bottom: 80px;
+}
+.edit-content .seed-edit-form {
   width: 100%;
   font-size: 85%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.seed-edit-form .form-row {
+.edit-content .seed-edit-form .form-row {
   width: 100%;
   font-size: 16px;
   display: flex;
   align-items: center;
   margin-top: 10px;
 }
-.seed-edit-form .form-row .team-name {
+.edit-content .seed-edit-form .form-row .team-name {
   width: 80%;
   padding-left: 10px;
 }
-.seed-edit-form .form-row .seed-input {
+.edit-content .seed-edit-form .form-row .seed-input {
   font-size: 16px;
   width: 20%;
   height: 30px;
@@ -538,7 +548,7 @@ html, body {
   border: 1px solid #ced4e3;
   border-radius: 6px;
 }
-.seed-edit-form .site-btn {
+.edit-content .seed-edit-form .site-btn {
   margin-top: 10px;
 }
 

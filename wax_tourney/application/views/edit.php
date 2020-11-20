@@ -1,5 +1,7 @@
 <h4>Edit Team Seeding</h4>
-<form method="POST" action="" id="seed-edit-form" class="seed-edit-form">
+
+<div class="edit-content">
+	<form method="POST" action="" id="seed-edit-form" class="seed-edit-form">
 
 	<?php
 //		$teams = $data["teams"];
@@ -17,6 +19,7 @@
 	<button type="submit" id="submit" class="site-btn">Submit</button>
 	<div id="form-content"></div>
 </form>
+</div>
 
 </body>
 
