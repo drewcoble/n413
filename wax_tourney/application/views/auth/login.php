@@ -19,6 +19,10 @@
 		<br>
 		<p>Don't have an account yet?</p>
 		<p><a href="<?=site_url()?>/auth/register">Sign Up here.</a></p>
+
+		<br>
+		<br>
+		<button>Yahoo Auth</button>
 	</div>
 
 	</body>

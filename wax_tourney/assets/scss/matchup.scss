@@ -1,0 +1,163 @@
+//styles for the matchup page
+
+.matchup-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba(248,249,251,0.75);
+  //border-radius: 6px;
+  //box-shadow: $shadow;
+  width: 100%;
+  //min-height: 710px;
+  //margin-bottom: 80px;
+
+  .matchup-positions {
+	width: 10%;
+	margin-top: 30px;
+
+	.position {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  margin: 15px auto 35px;
+	  width: 34px;
+	  height: 60px;
+	  color: rgb(248,249,251);
+	  /*background-color: blue;*/
+	  border-radius: 14px;
+	  box-shadow: $shadow;
+	}
+
+	.vs-pos {
+	  background-color: rgba($gray,0.4);
+	  height: 40px;
+	  color: $black;
+	  margin-bottom: 60px;
+	}
+
+	.qb-pos {
+	  background-color: rgba(44,33,201,0.8);
+	}
+
+	.rb-pos {
+	  background-color: rgba(33,201,111,0.8);
+	}
+
+	.wr-pos {
+	  background-color: rgba(201,33,67, 0.8);
+	}
+
+	.te-pos {
+	  background-color: rgba(201,167,33,0.8);
+	}
+  }
+
+  .matchup-team-details {
+	display: flex;
+	flex-direction: column;
+	//background-color: rgba($white,0.75);
+	border-radius: 6px;
+	//box-shadow: $shadow;
+	width: 42%;
+	min-width: 120px;
+	//min-height: 710px;
+	margin-bottom: 80px;
+
+
+	.team-header {
+	  background-color: rgba(50,50,100,0.25);
+	  height: 120px;
+	  width: 100%;
+	  border-radius: 6px;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+	  padding: 10px;
+	  box-shadow: $shadow;
+
+	  img{
+		height: 40px;
+		width: 40px;
+		border-radius: 50px;
+		box-shadow: $shadow;
+	  }
+
+	  .team-info{
+		width: 100%;
+		//min-width: 220px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		//margin-left: 20px;
+		font-size: 70%;
+
+		h3 {
+		  text-align: center;
+		  min-height: 45px;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		}
+
+		.team-subinfo {
+		  font-size: 90%;
+		  color: gray;
+		  display: flex;
+		  justify-content: flex-start;
+		}
+
+	  }
+
+	}
+
+
+	.team-roster {
+	  display: flex;
+	  flex-direction: column;
+	  width: 100%;
+	  padding-bottom: 10px;
+	  /*background-color: green;*/
+
+	  .player-row {
+		display: flex;
+		//height: 40px;
+		//min-height: 90px;
+		margin-top: 10px;
+
+
+		.player-details {
+		  width: 100%;
+		  height: 85px;
+		  display: flex;
+		  flex-direction: column-reverse;
+		  align-items: center;
+		  justify-content: space-between;
+		  background-color: rgba($black,0.1);
+		  //margin-right: 15px;
+		  border-radius: 10px;
+		  box-shadow: $shadow;
+
+
+		  .player-img {
+			/*min-width: 120px;*/
+			height: 45px;
+			width: 62.01px;
+			/*background-color: yellow;*/
+		  }
+
+		  .player-info {
+			font-size: 75%;
+			width: 100%;
+			//background-color: red;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		  }
+		}
+
+	  }
+	}
+
+  }
+}

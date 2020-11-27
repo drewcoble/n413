@@ -25,13 +25,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 // base_url for localhost on mac mini
-$config['base_url'] = 'http://10.0.0.12:8888/n413/wax_tourney';
+//$config['base_url'] = 'http://10.0.0.12:8888/n413/wax_tourney';
 
 // base_url for localhost on MAMP
 //$config['base_url'] = 'http://localhost:8888/n413/wax_tourney';
 
 // base_url for localhost on XAMPP
-//$config['base_url'] = 'http://localhost/n413/wax_tourney';
+$config['base_url'] = 'http://localhost/n413/wax_tourney';
 
 // base_url for web4
 //$config['base_url'] = 'https://in-info-web4.informatics.iupui.edu/~ancoble/N413/wax_tourney';

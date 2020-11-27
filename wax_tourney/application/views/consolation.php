@@ -28,10 +28,10 @@
 		}
 
 		if ($matchup["final_game"] == 1) {
-			echo '<div class="tourney-matchup final-game">';
+			echo '<a class="tourney-matchup final-game" href="'. site_url() . '/waxtourney/matchup?id1='. $teams[$matchup["team1"]]["id"] .'&id2='. $teams[$matchup["team2"]]["id"] .'">';
 		}
 		else {
-			echo '<div class="tourney-matchup cons-matchup">';
+			echo '<a class="tourney-matchup cons-matchup" href="'. site_url() . '/waxtourney/matchup?id1='. $teams[$matchup["team1"]]["id"] .'&id2='. $teams[$matchup["team2"]]["id"] .'">';
 		}
 
 		echo '
@@ -61,7 +61,7 @@
 					
 					<div class="team-score">' . $teams[$matchup["team2"]][$this_week_string] . '</div>
 				</div> <!-- end of matchup-team div -->
-			</div>'; //end of tourney-matchup div
+			</a>'; //end of tourney-matchup div
 
 	}
 ?>

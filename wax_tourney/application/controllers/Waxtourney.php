@@ -1,10 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
 class Waxtourney extends CI_Controller {
+
+
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('waxtourney_model');
+
 	}
 
 	public function index(){
@@ -13,6 +17,15 @@ class Waxtourney extends CI_Controller {
 		$data["teams"] = $this->waxtourney_model->get_scoring_list();
 		$this->load->view('templates/head', $data);
 		$this->load->view('index', $data);
+		$this->load->view('templates/footer', $data);
+	}
+
+	public function heatcheck(){
+		$data["page_title"] = "WAX TOURNEY";
+		$data["this_page"] = "heatcheck";
+		$data["teams"] = $this->waxtourney_model->get_scoring_list();
+		$this->load->view('templates/head', $data);
+		$this->load->view('heatcheck', $data);
 		$this->load->view('templates/footer', $data);
 	}
 
@@ -68,6 +81,34 @@ class Waxtourney extends CI_Controller {
 		$data["te"] = $this->waxtourney_model->get_player_by_id($data["team"]["te"]);
 		$this->load->view('templates/head', $data);
 		$this->load->view('teamdetails', $data);
+		$this->load->view('templates/footer', $data);
+	}
+
+	public function matchup() {
+		$data["page_title"] = "WAX TOURNEY";
+		$data["this_page"] = "team_details";
+		//get team IDs from query string
+		$team1_id = $this->input->get('id1', TRUE);
+		$team2_id = $this->input->get('id2', TRUE);
+		//get team1 data
+		$data["t1"] = $this->waxtourney_model->get_team_by_id($team1_id);
+		$data["t1_qb"] = $this->waxtourney_model->get_player_by_id($data["t1"]["qb"]);
+		$data["t1_rb1"] = $this->waxtourney_model->get_player_by_id($data["t1"]["rb1"]);
+		$data["t1_rb2"] = $this->waxtourney_model->get_player_by_id($data["t1"]["rb2"]);
+		$data["t1_wr1"] = $this->waxtourney_model->get_player_by_id($data["t1"]["wr1"]);
+		$data["t1_wr2"] = $this->waxtourney_model->get_player_by_id($data["t1"]["wr2"]);
+		$data["t1_te"] = $this->waxtourney_model->get_player_by_id($data["t1"]["te"]);
+		//get team2 data
+		$data["t2"] = $this->waxtourney_model->get_team_by_id($team2_id);
+		$data["t2_qb"] = $this->waxtourney_model->get_player_by_id($data["t2"]["qb"]);
+		$data["t2_rb1"] = $this->waxtourney_model->get_player_by_id($data["t2"]["rb1"]);
+		$data["t2_rb2"] = $this->waxtourney_model->get_player_by_id($data["t2"]["rb2"]);
+		$data["t2_wr1"] = $this->waxtourney_model->get_player_by_id($data["t2"]["wr1"]);
+		$data["t2_wr2"] = $this->waxtourney_model->get_player_by_id($data["t2"]["wr2"]);
+		$data["t2_te"] = $this->waxtourney_model->get_player_by_id($data["t2"]["te"]);
+		//load views
+		$this->load->view('templates/head', $data);
+		$this->load->view('matchup', $data);
 		$this->load->view('templates/footer', $data);
 	}
 

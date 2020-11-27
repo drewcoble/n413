@@ -18,8 +18,8 @@
 					<span class="team-seed">' . $team["team_seed"] . '</span>
 					<a href="' . site_url() . '/waxtourney/team_details?id=' . $team["id"] . '" class="team-name">
 						<img class="team-logo" src="' . base_url() . 'assets/images/fantasy_team_logos/' . $team["team_image"] . '" alt="">'
-					. $team["team_name"] .
-					'</a>
+				. $team["team_name"] .
+				'</a>
 					<span class="team-points">' . round($team["calc_points"], 2) . '</span>
 				</div>';
 		}
@@ -30,8 +30,8 @@
 					
 					<a href="' . site_url() . '/waxtourney/team_details?id=' . $team["id"] . '" class="team-name">
 						<img class="team-logo" src="' . base_url() . 'assets/images/fantasy_team_logos/' . $team["team_image"] . '" alt="">'
-					. $team["team_name"] .
-					'</a>
+				. $team["team_name"] .
+				'</a>
 					<span class="team-points">' . round($team["calc_points"], 2) . '</span>
 				</div>';
 		}

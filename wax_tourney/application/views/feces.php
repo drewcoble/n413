@@ -34,7 +34,7 @@
 				break;
 		}
 
-		echo '<div class="tourney-matchup feces-matchup">';
+		echo '<a class="tourney-matchup feces-matchup"href="'. site_url() . '/waxtourney/matchup?id1='. $teams[$matchup["team1"]]["id"] .'&id2='. $teams[$matchup["team2"]]["id"] .'">';
 
 		echo '<div class="matchup-team">
 					<div class="team-seed">'
@@ -60,7 +60,7 @@
 			</div>
 			<div class="team-score">' . $teams[$matchup["team2"]][$this_week_string] . '</div>
 			</div>
-	</div>';
+	</a>';
 	} // end of foreach loop
 	?>
 

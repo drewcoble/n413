@@ -10,15 +10,13 @@
 	$this_week = $this->input->get('week', TRUE);
 	$this_week_string = "wk" . $this_week . "_points";
 
-//	echo $teams[0]["team_name"];
-
 	foreach ($matchups as $matchup) {
 
 			if ($matchup["bracket"] == 1) {
-				echo '<div class="tourney-matchup winners">';
+				echo '<a class="tourney-matchup winners" href="'. site_url() . '/waxtourney/matchup?id1='. $teams[$matchup["team1"]]["id"] .'&id2='. $teams[$matchup["team2"]]["id"] .'">';
 			} else if ($matchup["bracket"] == 2) {
 				echo '<h4>ROYAL RUMBLE</h4>
-					<div class="tourney-matchup championship-game">
+					<a class="tourney-matchup championship-game"  href="'. site_url() . '/waxtourney/matchup?id1='. $teams[$matchup["team1"]]["id"] .'&id2='. $teams[$matchup["team2"]]["id"] .'">
 						<div class="matchup-team">
 							<div class="team-seed">' . $matchup["team1"] . '</div>
 							<div class="team-name">
@@ -28,7 +26,7 @@
 							'</div>
 							<div class="team-score">' . $teams[$matchup["team1"]][$this_week_string] . '</div>
 						</div>
-					</div> <!-- END OF ROYAL RUMBLE WINNERS BRACKET DIV -->
+					</a> <!-- END OF ROYAL RUMBLE WINNERS BRACKET DIV -->
 					<div class="tourney-matchup losers">
 						<div class="matchup-team">
 							<div class="team-seed">' . $matchup["team2"] . '</div>
@@ -43,7 +41,7 @@
 					';
 			} else if ($matchup["bracket"] == 3) {
 				echo '
-						<div class="matchup-team">
+						<div class="matchup-team" >
 							<div class="team-seed">' . $matchup["team1"] . '</div>
 							<div class="team-name">
 								<img class="team-logo" src="' . base_url() . 'assets/images/fantasy_team_logos/'
@@ -66,7 +64,7 @@
 				echo '<h4>Championship Week (If Necessary)</h4>
 						<div class="tourney-matchup championship-game">';
 			} else {
-			echo '<div class="tourney-matchup losers">';
+			echo '<a class="tourney-matchup losers" href="'. site_url() . '/waxtourney/matchup?id1='. $teams[$matchup["team1"]]["id"] .'&id2='. $teams[$matchup["team2"]]["id"] .'">';
 		}
 
 
@@ -98,7 +96,7 @@
 					<div class="team-score">' . $teams[$matchup["team2"]][$this_week_string] . '</div>
 				
 				</div>
-			</div>';
+			</a>';
 			}
 
 		}
