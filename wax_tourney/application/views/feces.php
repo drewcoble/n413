@@ -34,7 +34,7 @@
 				break;
 		}
 
-		echo '<a class="tourney-matchup feces-matchup"href="'. site_url() . '/waxtourney/matchup?id1='. $teams[$matchup["team1"]]["id"] .'&id2='. $teams[$matchup["team2"]]["id"] .'">';
+		echo '<a class="tourney-matchup feces-matchup"href="'. site_url() . '/waxtourney/matchup?week='. $this_week .'&id1='. $teams[$matchup["team1"]]["id"] .'&id2='. $teams[$matchup["team2"]]["id"] .'">';
 
 		echo '<div class="matchup-team">
 					<div class="team-seed">'

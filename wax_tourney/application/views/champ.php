@@ -13,10 +13,10 @@
 	foreach ($matchups as $matchup) {
 
 			if ($matchup["bracket"] == 1) {
-				echo '<a class="tourney-matchup winners" href="'. site_url() . '/waxtourney/matchup?id1='. $teams[$matchup["team1"]]["id"] .'&id2='. $teams[$matchup["team2"]]["id"] .'">';
+				echo '<a class="tourney-matchup winners" href="'. site_url() . '/waxtourney/matchup?week='. $this_week .'&id1='. $teams[$matchup["team1"]]["id"] .'&id2='. $teams[$matchup["team2"]]["id"] .'">';
 			} else if ($matchup["bracket"] == 2) {
 				echo '<h4>ROYAL RUMBLE</h4>
-					<a class="tourney-matchup championship-game"  href="'. site_url() . '/waxtourney/matchup?id1='. $teams[$matchup["team1"]]["id"] .'&id2='. $teams[$matchup["team2"]]["id"] .'">
+					<a class="tourney-matchup championship-game"  href="'. site_url() . '/waxtourney/matchup?week='. $this_week .'&id1='. $teams[$matchup["team1"]]["id"] .'&id2='. $teams[$matchup["team2"]]["id"] .'">
 						<div class="matchup-team">
 							<div class="team-seed">' . $matchup["team1"] . '</div>
 							<div class="team-name">
@@ -64,7 +64,7 @@
 				echo '<h4>Championship Week (If Necessary)</h4>
 						<div class="tourney-matchup championship-game">';
 			} else {
-			echo '<a class="tourney-matchup losers" href="'. site_url() . '/waxtourney/matchup?id1='. $teams[$matchup["team1"]]["id"] .'&id2='. $teams[$matchup["team2"]]["id"] .'">';
+			echo '<a class="tourney-matchup losers" href="'. site_url() . '/waxtourney/matchup?week='. $this_week .'&id1='. $teams[$matchup["team1"]]["id"] .'&id2='. $teams[$matchup["team2"]]["id"] .'">';
 		}
 
 
