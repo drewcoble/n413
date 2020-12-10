@@ -1,14 +1,16 @@
-<h4>Edit Team Seeding</h4>
+
+
+<h3 class="page-title">Team Seeding</h3>
 
 <div class="edit-content">
-	<form method="POST" action="" id="seed-edit-form" class="seed-edit-form">
+	<form method="POST" action="" id="seed-edit-form" class="edit-form">
 
 	<?php
 //		$teams = $data["teams"];
 		foreach($teams as $team) {
 			if ($team["team_seed"] >0) {
 				echo '<div class="seeding-row form-row">
-							<input id="' . $team['id'] . '" class="seed-input" value="'. $team["team_seed"] .'" />
+							<input id="' . $team['id'] . '" class="edit-input" value="'. $team["team_seed"] .'" />
 							<span class="team-name">' . $team['team_name'] .'</span>
 					</div>';
 			}
@@ -24,6 +26,8 @@
 </body>
 
 <script>
+
+
 	$(document).ready(function(){
 		document.title = page_title;
 		navbar_update("");
@@ -50,7 +54,7 @@
 		}
 
 
-		// handling the seed-sedit-form submit button
+		// handling the seed-edit-form submit button
 		$("#seed-edit-form").submit(function(event){
 			event.preventDefault();
 
@@ -58,14 +62,14 @@
 			// console.log(teamSeeds);
 
 			if (teamSeeds) {
-				$.post("<?=site_url()?>/waxtourney/edit_seeding",
+				$.post("<?=site_url()?>/waxtourney/edit_seed",
 						teamSeeds,
 						"json"
 				).done(()=> {
-					$("#alert-message").html('<h3 style="text-align:center;margin-bottom: 10px;">Changes were successfully made.</h3><a href="<?=site_url()?>/waxtourney/edit"><button class="site-btn">OK</button></a>');
+					$("#alert-message").html('<h3 style="text-align:center;margin-bottom: 10px;">Changes were successfully made.</h3><a href="<?=site_url()?>/waxtourney/edit_seeds"><button class="site-btn">OK</button></a>');
 					$("#alert-modal").css("display","flex");
 				}).fail(()=>{
-					$("#alert-message").html('<h3 style="text-align:center;color: red; margin-bottom: 10px;">Something went wrong.</h3><a href="<?=site_url()?>/waxtourney/edit"><button class="site-btn">Try Again</button></a>');
+					$("#alert-message").html('<h3 style="text-align:center;color: red; margin-bottom: 10px;">Something went wrong.</h3><a href="<?=site_url()?>/waxtourney/edit_seeds"><button class="site-btn">Try Again</button></a>');
 					$("#alert-modal").css("display","flex");
 				}); //post end
 			} //if (teamSeeds) end

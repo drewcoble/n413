@@ -52,24 +52,48 @@ class Waxtourney_model extends CI_Model {
 	}
 
 	public function edit_seed($id, $seed) {
-
 		$id = $this->db->escape_str($id);
 		$seed = $this->db->escape_str($seed);
 
 		$sql = 'UPDATE `wax_teams` SET team_seed='. $seed . ' WHERE id=' . $id;
 		$this->db->query($sql);
+	}
 
-//		$messages = array();
-//		$messages["status"] = $this->db->insert('the_form', $contact);
-//		if($messages["status"]){
-//			$messages["success"] = '<p>Thank you for submitting your comment. <br/>
-//								<span class="mt-5 float-right"><i>The Web Site Team</i></span></p>';
-//		}else{
-//			$messages["failed"]  = '<p>Sorry, but something went wrong.  Please try again later. <br/>
-//								<span class="mt-5 float-right"><i>The Web Site Team</i></span></p>';
-//		}
-//		return $messages;
+	public function edit_score($id, $score, $week) {
+		$id = $this->db->escape_str($id);
+		$score = $this->db->escape_str($score);
+		$score_field = "wk". $week ."_points";
 
+		$sql = 'UPDATE `wax_teams` SET ' . $score_field . '='. $score . ' WHERE id=' . $id;
+		$this->db->query($sql);
+	}
+
+	public function edit_champ_bracket($matchup_id, $team1, $team2) {
+		$matchup_id = intval($matchup_id);
+		$team1 = intval($team1);
+		$team2 = intval($team2);
+
+		$sql = 'UPDATE `wax_champ` SET team1='.$team1.', team2='.$team2.' WHERE matchup_id='.$matchup_id;
+//		$sql = 'UPDATE `wax_champ` SET `team1`=3,`team2`=8 WHERE `matchup_id`=5';
+		$this->db->query($sql);
+	}
+
+	public function edit_cons_bracket($matchup_id, $team1, $team2) {
+		$matchup_id = intval($matchup_id);
+		$team1 = intval($team1);
+		$team2 = intval($team2);
+
+		$sql = 'UPDATE `wax_consolation` SET team1='.$team1.', team2='.$team2.' WHERE matchup_id='.$matchup_id;
+		$this->db->query($sql);
+	}
+
+	public function edit_feces_bracket($matchup_id, $team1, $team2) {
+		$matchup_id = intval($matchup_id);
+		$team1 = intval($team1);
+		$team2 = intval($team2);
+
+		$sql = 'UPDATE `wax_feces_cup` SET team1='.$team1.', team2='.$team2.' WHERE matchup_id='.$matchup_id;
+		$this->db->query($sql);
 	}
 
 

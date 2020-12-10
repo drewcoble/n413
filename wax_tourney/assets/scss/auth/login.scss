@@ -1,12 +1,12 @@
 /* styles for the login page */
 
-.login-form {
+.login-form, .register-form {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
 }
 
-.login-row {
+.login-row, .register-row {
   display: flex;
   flex-direction: column;
 

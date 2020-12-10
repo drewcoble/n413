@@ -684,55 +684,142 @@ html, body {
   text-align: center;
 }
 
+.edit-menu {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px -20px 5px -20px;
+}
+.edit-menu .menu-option {
+  font-weight: 550;
+  text-decoration: none;
+  color: #000019;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+.edit-menu .menu-option:hover {
+  font-weight: 700;
+}
+.edit-menu .menu-dropdown {
+  width: 100%;
+  min-height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0px 10px 0px;
+  padding: 5px 0;
+  border-radius: 8px;
+  text-align: center;
+}
+.edit-menu .menu-dropdown:hover {
+  background: linear-gradient(170deg, rgba(142, 145, 190, 0.35), rgba(142, 145, 190, 0.15));
+}
+.edit-menu .menu-dropdown .week-list {
+  display: none;
+  flex-direction: column;
+}
+.edit-menu .menu-dropdown .week-list a {
+  text-decoration: none;
+  color: #000019;
+  width: 100%;
+  min-height: 20px;
+  padding: 5px 0;
+}
+.edit-menu .menu-dropdown .week-list a:hover {
+  font-weight: 550;
+}
+
 .edit-content {
   margin-bottom: 80px;
 }
-.edit-content .seed-edit-form {
+.edit-content .edit-form {
   width: 100%;
   font-size: 85%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.edit-content .seed-edit-form .form-row {
+.edit-content .edit-form .form-row {
   width: 100%;
   font-size: 16px;
   display: flex;
   align-items: center;
   margin-top: 10px;
 }
-.edit-content .seed-edit-form .form-row .team-name {
+.edit-content .edit-form .form-row .team-name {
   width: 80%;
   padding-left: 10px;
 }
-.edit-content .seed-edit-form .form-row .seed-input {
+.edit-content .edit-form .form-row .edit-input {
   font-size: 16px;
   width: 20%;
+  min-width: 75px;
+  height: 30px;
+  margin-left: 20px;
+  text-align: center;
+  border: 1px solid #ced4e3;
+  border-radius: 6px;
+}
+.edit-content .edit-form .site-btn {
+  margin-top: 10px;
+}
+.edit-content .wb {
+  background: rgba(78, 114, 255, 0.8);
+}
+.edit-content .lb {
+  background: rgba(201, 74, 94, 0.8);
+}
+.edit-content .cb {
+  background: rgba(142, 145, 190, 0.8);
+}
+.edit-content .fc {
+  background: rgba(89, 48, 1, 0.8);
+}
+.edit-content .edit-matchup {
+  border-radius: 8px;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 5px 0;
+}
+.edit-content .edit-matchup .edit-matchup-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+.edit-content .edit-matchup .edit-matchup-row .row-label {
+  margin-right: 15px;
+  width: 60px;
+}
+.edit-content .edit-matchup .edit-matchup-row .edit-input {
+  font-size: 16px;
   height: 30px;
   padding-left: 10px;
   border: 1px solid #ced4e3;
   border-radius: 6px;
 }
-.edit-content .seed-edit-form .site-btn {
-  margin-top: 10px;
-}
 
 /* styles for the login page */
-.login-form {
+.login-form, .register-form {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
 }
 
-.login-row {
+.login-row, .register-row {
   display: flex;
   flex-direction: column;
 }
-.login-row span {
+.login-row span, .register-row span {
   letter-spacing: 2px;
   font-size: 16px;
 }
-.login-row input {
+.login-row input, .register-row input {
   width: 100%;
   max-width: 350px;
   height: 40px;

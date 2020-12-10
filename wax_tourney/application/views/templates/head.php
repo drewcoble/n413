@@ -24,7 +24,7 @@
 
 			<?php
 				if ($this->session->role == 1) {
-					echo '<a href="' . site_url() . '/waxtourney/edit" class="nav-icon" id="edit"><i class="fas fa-pen-square" ></i ><span style = "margin-left: 5px" > Edit</span ></a >';
+					echo '<a href="' . site_url() . '/waxtourney/edit_seeds" class="nav-icon" id="edit"><i class="fas fa-pen-square" ></i ><span style = "margin-left: 5px" > Edit</span ></a >';
 				}
 				else {
 					echo '<div class="nav-icon" id="edit"></div >';

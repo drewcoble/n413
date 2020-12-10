@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div id="headline" class="row  mt-5">
 		<div class="col-12 text-center">
-			<h2>Amp Jam Lit Register</h2>
+			<h2 class="page-title">Register</h2>
 		</div> <!-- /col-12 -->
 	</div> <!-- /row -->
 
@@ -10,17 +10,27 @@
 		<div class="row mt-5">
 			<div class="col-4"></div>  <!-- spacer -->
 			<div id="form-container" class="col-4">
-				<div>User Name: <input type="text" id="username" name="username" class="form-control" value="" placeholder="Enter User Name" required/></div>
+				<div class="register-row">
+					<span>User Name: </span>
+					<input type="text" id="username" name="username" class="form-control" value="" placeholder="Enter Username" required/>
+				</div>
 				<div id="username_length" class="text-danger"></div>
 				<div id="username_exists" class="text-danger"></div>
-				<div class="mt-3">E-mail: <input type="email" id="email" name="email" class="form-control" value="" placeholder="Enter E-mail" required/></div>
+				<div class="register-row">
+					<span>E-mail: </span>
+					<input type="email" id="email" name="email" class="form-control" value="" placeholder="Enter E-mail" required/>
+				</div>
 				<div id="email_exists" class="text-danger"></div>
 				<div id="email_validate" class="text-danger"></div>
-				<div class="mt-3">Password: <input type="password" id="password" name="password" class="form-control" value="" placeholder="Enter Password" required/></div>
+				<div class="register-row">
+					<span>Password: </span>
+					<input type="password" id="password" name="password" class="form-control" value="" placeholder="Enter Password" required/>
+				</div>
 				<div id="password_length" class="text-danger"></div>
-				<div class="mt-5"><button type="submit" id="submit" class="btn btn-primary float-right">Submit</button></div>
+
 			</div>  <!-- /#form-container -->
 		</div>  <!-- /.row -->
+		<button type="submit" id="submit" class="site-btn">Submit</button>
 	</form>
 </div>
 	</body>

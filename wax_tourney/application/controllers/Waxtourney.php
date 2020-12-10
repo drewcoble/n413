@@ -112,22 +112,87 @@ class Waxtourney extends CI_Controller {
 		$this->load->view('templates/footer', $data);
 	}
 
-	public function edit() {
+	public function edit_seeds() {
 //		$this_week = $this->input->get('week', TRUE);
 		$data["page_title"] = "WAX | EDIT";
-		$data["this_page"] = "edit";
+		$data["this_page"] = "edit_seeds";
 //		$data["this_week"] = $this_week;
 		$data["teams"] = $this->waxtourney_model->get_teams();
 //		$data["matchups"] = $this->waxtourney_model->get_winners_bracket($this_week);
 		$this->load->view('templates/head', $data);
-		$this->load->view('edit', $data);
+		$this->load->view('templates/edit-select', $data);
+		$this->load->view('edit_seeds', $data);
 		$this->load->view('templates/footer', $data);
 	}
 
-	public function edit_seeding() {
+	public function edit_seed() {
 		$teams = $this->input->post();
 		foreach($teams as $team) {
 			$this->waxtourney_model->edit_seed($team['id'], $team['seed']);
+		}
+//		echo json_encode($messages);
+	}
+
+	public function edit_scores() {
+		$week = $this->input->get('week', TRUE);
+		$data["page_title"] = "WAX | EDIT";
+		$data["this_page"] = "edit_scoring";
+		$data["week"] = $week;
+		$data["teams"] = $this->waxtourney_model->get_teams();
+		$this->load->view('templates/head', $data);
+		$this->load->view('templates/edit-select', $data);
+		$this->load->view('edit_scores', $data);
+		$this->load->view('templates/footer', $data);
+	}
+
+	public function edit_score() {
+		$week = $this->input->get('week', TRUE);
+		$teams = $this->input->post();
+		foreach($teams as $team) {
+			$this->waxtourney_model->edit_score($team['id'], $team['score'], $week);
+		}
+//		echo json_encode($messages);
+	}
+
+	public function edit_brackets() {
+		$week = $this->input->get('week', TRUE);
+		$bracket = $this->input->get('b', TRUE);
+
+		$data["week"] = $week;
+		$data["bracket"] = $bracket;
+		$data["page_title"] = "WAX | EDIT";
+		$data["this_page"] = "edit_brackets";
+		$data["champ_bracket"] = $this->waxtourney_model->get_winners_bracket($week);
+		$data["cons_bracket"] = $this->waxtourney_model->get_consolation_bracket($week);
+		$data["feces_bracket"] = $this->waxtourney_model->get_feces_cup($week);
+		$data["teams"] = $this->waxtourney_model->get_teams();
+
+		$this->load->view('templates/head', $data);
+		$this->load->view('templates/edit-select', $data);
+		$this->load->view('edit_brackets', $data);
+		$this->load->view('templates/footer', $data);
+	}
+
+	public function edit_champ_bracket() {
+		$matchups = $this->input->post();
+		foreach($matchups as $matchup) {
+			$this->waxtourney_model->edit_champ_bracket($matchup['matchup_id'], $matchup['team1'], $matchup['team2']);
+		}
+//		echo json_encode($messages);
+	}
+
+	public function edit_cons_bracket() {
+		$matchups = $this->input->post();
+		foreach($matchups as $matchup) {
+			$this->waxtourney_model->edit_cons_bracket($matchup['matchup_id'], $matchup['team1'], $matchup['team2']);
+		}
+//		echo json_encode($messages);
+	}
+
+	public function edit_feces_bracket() {
+		$matchups = $this->input->post();
+		foreach($matchups as $matchup) {
+			$this->waxtourney_model->edit_feces_bracket($matchup['matchup_id'], $matchup['team1'], $matchup['team2']);
 		}
 //		echo json_encode($messages);
 	}

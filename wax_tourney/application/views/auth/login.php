@@ -2,7 +2,7 @@
 
 		<div id="headline" class="row  mt-5">
 			<div class="col-12 text-center">
-				<h3 class="page-title">Log In</h3>
+				<h2 class="page-title">Log In</h2>
 			</div> <!-- /col-12 -->
 		</div> <!-- /row -->
 
